@@ -1,6 +1,6 @@
 # flutter_base
 
-A new Flutter project.
+Flutter UI, Interface do Nubanck em Flutter.
 
 ## Getting Started
 
