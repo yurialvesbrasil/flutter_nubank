@@ -8,15 +8,45 @@ class HomeView extends StatefulWidget {
   _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewState extends State<HomeView>
+    with SingleTickerProviderStateMixin {
+  AnimationController animationController;
+  Animation<double> animation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 200),
+    )..addListener(() => setState(() {}));
+    animation = CurvedAnimation(
+      parent: animationController,
+      curve: Curves.ease,
+    );
+
+    //animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
       child: Column(
         children: <Widget>[
-          AppBarPerfil(),
-          ExpandedPerfilContainer(),
+          AppBarPerfil(
+            animationController: animationController,
+          ),
+          ExpandedPerfilContainer(
+            animationController: animationController,
+            animation: animation,
+          ),
           Expanded(
               child: SingleChildScrollView(
             child: Container(),

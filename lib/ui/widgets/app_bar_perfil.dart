@@ -6,11 +6,21 @@ import '../values/styles.dart';
 import '../values/values.dart';
 
 class AppBarPerfil extends StatelessWidget {
+  final AnimationController animationController;
+
+  const AppBarPerfil({Key key, this.animationController}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<HomeViewModel>(context);
     return GestureDetector(
-      onTap: () => model.setPerfilExpanded(!model.perfil_expanded),
+      onTap: () {
+        if (!model.perfil_expanded)
+          animationController.forward();
+        else
+          animationController.reverse();
+        model.setPerfilExpanded(!model.perfil_expanded);
+      },
       child: (MediaQuery.of(context).size.height <= 400)
           ? Container(
               height: 65,
@@ -26,15 +36,13 @@ class AppBarPerfil extends StatelessWidget {
                     style: AppTheme.heading,
                   ),
                   SizedBox(width: 8),
-                  Expanded(
-                    child: Image.asset(
-                      model.perfil_expanded
-                          ? 'assets/icons/expand_less.png'
-                          : 'assets/icons/expand_more.png',
-                      height: 15,
-                      width: 25,
-                    ),
-                  )
+                  Image.asset(
+                    model.perfil_expanded
+                        ? 'assets/icons/expand_less.png'
+                        : 'assets/icons/expand_more.png',
+                    height: 15,
+                    width: 25,
+                  ),
                 ],
               ))
           : Container(
