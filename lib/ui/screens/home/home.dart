@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nubank/ui/values/styles.dart';
-import '../../values/strings.dart';
+import 'package:flutter_nubank/ui/widgets/app_bar_perfil.dart';
+import 'package:flutter_nubank/ui/widgets/button_bar_list.dart';
+import 'package:flutter_nubank/ui/widgets/expanded_perfil_container.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -11,23 +12,18 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-            padding: EdgeInsets.only(top: 18),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Image.asset(
-                  'assets/icons/logo.png',
-                  height: 45,
-                ),
-                Text(
-                  "Yuri",
-                  style: AppTheme.heading,
-                )
-              ],
-            )),
+        body: SafeArea(
+      child: Column(
+        children: <Widget>[
+          AppBarPerfil(),
+          ExpandedPerfilContainer(),
+          Expanded(
+              child: SingleChildScrollView(
+            child: Container(),
+          )),
+          ButtonBarList(),
+        ],
       ),
-    );
+    ));
   }
 }
