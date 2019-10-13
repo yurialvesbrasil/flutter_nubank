@@ -3,6 +3,7 @@ import 'package:flutter_nubank/ui/widgets/app_bar_perfil.dart';
 import 'package:flutter_nubank/ui/widgets/button_bar_list.dart';
 import 'package:flutter_nubank/ui/widgets/custom_swiper_pagination.dart';
 import 'package:flutter_nubank/ui/widgets/expanded_perfil_container.dart';
+import 'package:flutter_nubank/ui/widgets/main_list.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class HomeView extends StatefulWidget {
@@ -26,8 +27,6 @@ class _HomeViewState extends State<HomeView>
       parent: animationController,
       curve: Curves.ease,
     );
-
-    //animationController.forward();
   }
 
   @override
@@ -38,47 +37,28 @@ class _HomeViewState extends State<HomeView>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    //print(tween.value.toString());
+    return  Scaffold(
         body: SafeArea(
-      child: Column(
-        children: <Widget>[
-          AppBarPerfil(
-            animationController: animationController,
-          ),
-          ExpandedPerfilContainer(
-            animationController: animationController,
-            animation: animation,
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    //margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: MediaQuery.of(context).size.height /1.7,
-                    child: Swiper(
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          margin: EdgeInsets.fromLTRB(18, 16, 20, 0),
-                          width: MediaQuery.of(context).size.width - 32,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(4)),
-                          ),
-                        );
-                      },
-                      itemCount: 3,
-                      loop: false,
-                    ),
-                  ),
-                ],
+          child: Column(
+            children: <Widget>[
+              AppBarPerfil(
+                animationController: animationController,
+                animation: animation,
               ),
-            ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      MainList(),
+                    ],
+                  ),
+                ),
+              ),
+              CustomSwiperPagination(),
+              ButtonBarList(),
+            ],
           ),
-          CustomSwiperPagination(),
-          ButtonBarList(),
-        ],
-      ),
-    ));
+        ));
   }
 }

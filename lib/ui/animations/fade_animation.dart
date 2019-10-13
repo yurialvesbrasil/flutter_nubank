@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nubank/core/view_models/home_view_model.dart';
 import 'package:provider/provider.dart';
 
-class FadeAnimation extends StatefulWidget {
+class FadeAnimation extends StatelessWidget {
   final Widget child;
 
   FadeAnimation({this.child});
 
-  @override
-  _FadeAnimationState createState() => _FadeAnimationState();
-}
-
-class _FadeAnimationState extends State<FadeAnimation> {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<HomeViewModel>(context);
@@ -22,6 +17,6 @@ class _FadeAnimationState extends State<FadeAnimation> {
         opacity: model.perfil_expanded ? 1.0 : 0.0,
         duration: Duration(milliseconds: 300),
         // The green box must be a child of the AnimatedOpacity widget.
-        child: widget.child);
+        child: child);
   }
 }

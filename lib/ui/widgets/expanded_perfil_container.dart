@@ -3,13 +3,12 @@ import 'package:flutter_nubank/ui/values/styles.dart';
 import 'package:flutter_nubank/ui/widgets/row_perfil.dart';
 
 import '../values/colors.dart';
-import 'fade_animation.dart';
+import '../animations/fade_animation.dart';
 
 class ExpandedPerfilContainer extends StatelessWidget {
-  final AnimationController animationController;
   final Animation<double> animation;
 
-  ExpandedPerfilContainer({this.animationController, this.animation});
+  ExpandedPerfilContainer({this.animation});
 
   @override
   Widget build(BuildContext context) {
