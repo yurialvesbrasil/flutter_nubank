@@ -22,3 +22,4 @@ const Color textDestaqueColor = Color(0xFF00cccc);
 const Color textVerdeColor = Color(0xFF99cc33);
 const Color textPadraoColor = Color(0xFF666666);
 const Color dividerColor = Color(0xFFcc99cc);
+const Color itemBottonColor = Color(0xFF9140a9);
