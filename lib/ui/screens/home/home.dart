@@ -55,11 +55,11 @@ class _HomeViewState extends State<HomeView>
                 children: <Widget>[
                   Container(
                     //margin: EdgeInsets.symmetric(vertical: 20.0),
-                    height: 350,
+                    height: MediaQuery.of(context).size.height /1.7,
                     child: Swiper(
                       itemBuilder: (BuildContext context, int index) {
                         return Container(
-                          margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                          margin: EdgeInsets.fromLTRB(18, 16, 20, 0),
                           width: MediaQuery.of(context).size.width - 32,
                           decoration: BoxDecoration(
                             color: Colors.white,

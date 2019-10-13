@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nubank/ui/values/colors.dart' as color;
 
 class ButtonBarList extends StatelessWidget {
-  double _w = 85;
-  double _h = 90;
+  double _w = 95;
+  double _h = 100;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(16,8,0,16),
+      margin: EdgeInsets.fromLTRB(18,8,0,16),
       width: MediaQuery.of(context).size.width,
       height: _h,
       child: ListView(

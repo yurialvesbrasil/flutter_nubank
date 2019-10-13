@@ -5,7 +5,7 @@ class CustomSwiperPagination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      margin: EdgeInsets.only(top: 8),
+      margin: EdgeInsets.only(bottom: 10),
       width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
