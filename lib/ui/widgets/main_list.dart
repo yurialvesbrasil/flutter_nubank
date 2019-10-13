@@ -1,46 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_nubank/core/view_models/home_view_model.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:provider/provider.dart';
 
-class MainList extends StatefulWidget {
-  @override
-  _MainListState createState() => _MainListState();
-}
-
-class _MainListState extends State<MainList>
-    with SingleTickerProviderStateMixin {
-  AnimationController animationController;
-  Animation<double> animation;
-
-  @override
-  void initState() {
-    super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 3),
-    )..addListener(() => setState(() {}));
-    final Animation curve = CurvedAnimation(
-        parent: animationController, curve: Curves.elasticInOut);
-    animation = Tween<double>(begin: 400, end: 0).animate(curve);
-    animationController.forward();
-
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
-  }
+class MainList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //print(animation.value.toString());
-    return SingleChildScrollView(
-        child: Column(children: <Widget>[
+     final model = Provider.of<HomeViewModel>(context);
+    return
       Container(
-        transform: Matrix4.translationValues(animation.value, 0.0, 0.0),
         height: MediaQuery.of(context).size.height / 1.7,
         child: Swiper(
+          onIndexChanged: (index){
+            model.setIndexMainPage(index: index);
+          },
           itemBuilder: (BuildContext context, int index) {
             return Container(
               margin: EdgeInsets.fromLTRB(18, 16, 20, 0),
@@ -54,7 +29,7 @@ class _MainListState extends State<MainList>
           itemCount: 3,
           loop: false,
         ),
-      ),
-    ]));
+      );
+
   }
 }

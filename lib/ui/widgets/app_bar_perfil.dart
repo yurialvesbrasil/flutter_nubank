@@ -2,19 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nubank/core/view_models/home_view_model.dart';
 import 'package:flutter_nubank/ui/widgets/expanded_perfil_container.dart';
 import 'package:provider/provider.dart';
-
 import '../values/styles.dart';
 import '../values/values.dart';
 
-class AppBarPerfil extends StatelessWidget {
-  final AnimationController animationController;
-  final Animation<double> animation;
+class AppBarPerfil extends StatefulWidget {
 
-  const AppBarPerfil({Key key, this.animationController, this.animation}) : super(key: key);
+  const AppBarPerfil({Key key,}) : super(key: key);
+
+  @override
+  _AppBarPerfilState createState() => _AppBarPerfilState();
+}
+
+class _AppBarPerfilState extends State<AppBarPerfil> with SingleTickerProviderStateMixin{
+  AnimationController animationController;
+  Animation<double> animation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 200),
+    )..addListener(() => setState(() {}));
+    animation = CurvedAnimation(
+      parent: animationController,
+      curve: Curves.ease,
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<HomeViewModel>(context);
+
     return Column(children: <Widget>[
       GestureDetector(
         onTap: () {

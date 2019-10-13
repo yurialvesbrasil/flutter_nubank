@@ -16,6 +16,7 @@ class ExpandedPerfilContainer extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(32, 18, 32, 0),
       height: (animation.value * (MediaQuery.of(context).size.height / 1.75)),
       child: FadeAnimation(
+        duration: Duration(milliseconds: 300),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
