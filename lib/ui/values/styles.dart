@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nubank/ui/values/colors.dart' as prefix0;
+import 'package:flutter_nubank/ui/values/colors.dart';
 
 import 'colors.dart';
 
@@ -9,6 +9,13 @@ class AppTheme {
     color: Colors.white,
     fontSize: 16,
     fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle displayPrimaryColor = TextStyle(
+    fontFamily: 'WorkSans',
+    color: primaryColor,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
   );
 
   static const TextStyle display11 = TextStyle(
@@ -23,6 +30,20 @@ class AppTheme {
     color: Colors.black,
     fontSize: 16,
     fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle displayMiddle = TextStyle(
+    fontFamily: 'WorkSans',
+    color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle displayBlackBig = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w800,
+    fontSize: 24,
+    color: Colors.black,
   );
 
   static final TextStyle displayVerde = TextStyle(
@@ -73,6 +94,7 @@ class AppTheme {
     fontSize: 22,
     color: Colors.white,
   );
+
 
   static final TextStyle subHeading = TextStyle(
     fontFamily: 'WorkSans',

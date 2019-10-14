@@ -3,9 +3,11 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_nubank/core/view_models/home_view_model.dart';
 import 'package:flutter_nubank/ui/values/colors.dart';
 import 'package:flutter_nubank/ui/values/styles.dart';
+import 'package:flutter_nubank/ui/widgets/aba_main_2.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:provider/provider.dart';
 
+import 'aba_main_3.dart';
 import 'aba_saldo.dart';
 import 'fab_progress_bar.dart';
 
@@ -31,7 +33,15 @@ class MainList extends StatelessWidget {
             ),
             child: (index == 0)
                 ? AbaSaldo(height: height)
-                :Container(),
+                : (index == 1)
+                    ? AbaMain2(
+                        height: height,
+                      )
+                    : (index == 2)
+                        ? AbaMain3(
+                            height: height,
+                          )
+                        : Container(),
           );
         },
         itemCount: 3,
