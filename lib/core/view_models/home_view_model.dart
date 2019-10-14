@@ -1,4 +1,5 @@
-import 'package:flutter_nubank/core/enums/view_state.dart';
+
+import 'package:flutter_nubank/core/models/usuario.dart';
 
 import 'base_view_model.dart';
 
@@ -8,6 +9,8 @@ class HomeViewModel extends BaseViewModel {
 
   int _indexMainPage = 0;
   int get indexMainPage => _indexMainPage;
+
+  Usuario get cliente => usuario;
 
   @override
   void dispose() {

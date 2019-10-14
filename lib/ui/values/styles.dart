@@ -1,11 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nubank/ui/values/colors.dart' as prefix0;
+
+import 'colors.dart';
 
 class AppTheme {
   static const TextStyle display1 = TextStyle(
     fontFamily: 'WorkSans',
     color: Colors.white,
     fontSize: 16,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle display11 = TextStyle(
+    fontFamily: 'WorkSans',
+    color: textFormColor,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle displayBlack = TextStyle(
+    fontFamily: 'WorkSans',
+    color: Colors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle displayVerde = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w700,
+    fontSize: 16,
+    color: textVerdeColor,
   );
 
   static const TextStyle display2 = TextStyle(
@@ -13,6 +37,34 @@ class AppTheme {
     color: Colors.white,
     fontSize: 16,
     fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle display22 = TextStyle(
+    fontFamily: 'WorkSans',
+    color: textFormColor,
+    fontSize: 19,
+    fontWeight: FontWeight.w400,
+  );
+
+  static final TextStyle display3 = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    color: textDestaqueColor,
+  );
+
+  static final TextStyle display41 = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w400,
+    fontSize: 40,
+    color: textDestaqueColor,
+  );
+
+  static final TextStyle display42 = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w700,
+    fontSize: 40,
+    color: textDestaqueColor,
   );
 
   static final TextStyle heading = TextStyle(
