@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nubank/ui/values/styles.dart';
 import 'package:flutter_nubank/ui/widgets/row_perfil.dart';
 
-import '../values/colors.dart';
 import '../animations/fade_animation.dart';
+import '../values/colors.dart';
 
 class ExpandedPerfilContainer extends StatelessWidget {
   final Animation<double> animation;
@@ -14,7 +14,7 @@ class ExpandedPerfilContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(32, 18, 32, 0),
-      height: (animation.value * (MediaQuery.of(context).size.height / 1.75)),
+      height: (animation.value * (MediaQuery.of(context).size.height / 2)),
       child: FadeAnimation(
         duration: Duration(milliseconds: 300),
         child: SingleChildScrollView(
