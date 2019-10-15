@@ -1,4 +1,4 @@
-
+import 'package:flutter_nubank/core/models/item_botton.dart';
 import 'package:flutter_nubank/core/models/usuario.dart';
 
 import 'base_view_model.dart';
@@ -11,6 +11,7 @@ class HomeViewModel extends BaseViewModel {
   int get indexMainPage => _indexMainPage;
 
   Usuario get cliente => usuario;
+  List<ItemButton> get itensButtonVM => itensButton;
 
   @override
   void dispose() {
@@ -22,7 +23,7 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void setIndexMainPage({int index}){
+  void setIndexMainPage({int index}) {
     _indexMainPage = index;
     notifyListeners();
   }

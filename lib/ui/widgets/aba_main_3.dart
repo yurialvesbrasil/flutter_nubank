@@ -50,7 +50,7 @@ class AbaMain3 extends StatelessWidget {
                   borderRadius:
                       const BorderRadius.all(const Radius.circular(6)),
                 ),
-                child: Text("COMEÇA A NUCONTA",
+                child: Text("ATIVE O SEU REWARDS",
                     style: AppTheme.displayPrimaryColor),
               ),
             ),
