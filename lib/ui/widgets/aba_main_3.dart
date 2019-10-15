@@ -11,7 +11,7 @@ class AbaMain3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: EdgeInsets.all(28),
+        padding: EdgeInsets.all(24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -38,7 +38,7 @@ class AbaMain3 extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 20,
+              height: 18,
             ),
             InkWell(
               onTap: () {},

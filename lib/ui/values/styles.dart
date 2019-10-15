@@ -11,6 +11,13 @@ class AppTheme {
     fontWeight: FontWeight.w400,
   );
 
+  static const TextStyle displaySmall = TextStyle(
+    fontFamily: 'WorkSans',
+    color: Colors.white,
+    fontSize: 13,
+    fontWeight: FontWeight.w200,
+  );
+
   static const TextStyle displayPrimaryColor = TextStyle(
     fontFamily: 'WorkSans',
     color: primaryColor,
@@ -94,7 +101,6 @@ class AppTheme {
     fontSize: 22,
     color: Colors.white,
   );
-
 
   static final TextStyle subHeading = TextStyle(
     fontFamily: 'WorkSans',

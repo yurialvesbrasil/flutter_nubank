@@ -18,7 +18,12 @@ class AbaSaldo extends StatelessWidget {
       Row(children: <Widget>[
         Expanded(
           child: Container(
-            color: Colors.white,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(4),
+              ),
+            ),
             height: (((height / 4) - 16) * 3) + 16,
             child: Column(
               children: <Widget>[
@@ -120,13 +125,13 @@ class AbaSaldo extends StatelessWidget {
       Row(children: <Widget>[
         Expanded(
           child: Container(
+            height: 92,
             decoration: BoxDecoration(
               color: backgroundGrayColor,
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(4),
                   bottomRight: Radius.circular(4)),
             ),
-            height: (height / 4) + 16,
             child: Row(
               children: <Widget>[
                 Padding(
