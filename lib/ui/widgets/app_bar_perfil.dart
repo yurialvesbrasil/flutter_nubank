@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nubank/core/view_models/home_view_model.dart';
 import 'package:flutter_nubank/ui/widgets/expanded_perfil_container.dart';
 import 'package:provider/provider.dart';
+
 import '../values/styles.dart';
 import '../values/values.dart';
 
 class AppBarPerfil extends StatefulWidget {
-
-  const AppBarPerfil({Key key,}) : super(key: key);
+  const AppBarPerfil({
+    Key key,
+  }) : super(key: key);
 
   @override
   _AppBarPerfilState createState() => _AppBarPerfilState();
 }
 
-class _AppBarPerfilState extends State<AppBarPerfil> with SingleTickerProviderStateMixin{
+class _AppBarPerfilState extends State<AppBarPerfil>
+    with SingleTickerProviderStateMixin {
   AnimationController animationController;
   Animation<double> animation;
 

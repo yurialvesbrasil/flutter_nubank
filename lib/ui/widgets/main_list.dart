@@ -13,7 +13,7 @@ class MainList extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height / 1.7;
     final model = Provider.of<HomeViewModel>(context);
-
+    double top = (MediaQuery.of(context).size.height <= 400) ? 0 : 16;
     return Container(
       height: height,
       child: Swiper(
@@ -22,7 +22,7 @@ class MainList extends StatelessWidget {
         },
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            margin: EdgeInsets.fromLTRB(16, 16, 20, 16),
+            margin: EdgeInsets.fromLTRB(16, top, 20, 16),
             width: MediaQuery.of(context).size.width - 32,
             decoration: BoxDecoration(
               color: Colors.white,
